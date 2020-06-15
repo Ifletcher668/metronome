@@ -1,0 +1,71 @@
+@import './mixins';
+
+html,
+body,
+#root {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+        'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #2b2a2a;
+    color: #ffffff;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.site-wrapper {
+    @include flexbox();
+    flex-flow: column wrap;
+}
+
+.container {
+    @include flexbox();
+    flex-flow: row wrap;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+}
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    @include flex(0 10%);
+    width: 100%;
+    justify-content: center;
+}
+
+#metronome {
+    background-color: rgb(18, 19, 66);
+    @include flex(1);
+    border-radius: 5%;
+    padding: 0.5em;
+}
+
+#main {
+    @include flex(1 0);
+}
+
+.flex-1-item {
+    @include flex(1);
+}
+.flex-0-item {
+    @include flex(0 1 5%);
+}
